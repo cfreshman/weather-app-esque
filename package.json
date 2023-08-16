@@ -1,0 +1,14 @@
+{
+  "name": "weather-app-esque",
+  "version": "0.0.1",
+  "description": "modular Weather.app-esque ui",
+
+  "repository": "https://github.com/cfreshman/weather-app-esque",
+  "author": "Cyrus Freshman",
+  "license": "SEE LICENSE IN https://raw.tu.fo/license/mit-non-commercial.txt",
+  "private": false,
+  "scripts": {
+    "sync": "sh -c 'echo \"syncing $(basename $(pwd))/src to $0\n... \\c\" && (rsync -ahze -i src/ $0) && echo done'",
+    "watch": "sh -c 'yarn sync $0 && echo \"watching for changes\" && fswatch -rL src/ | ( while read; do echo \"syncing ... \\c\" && (: yarn sync $0) && echo done; done; echo \"\" )'"
+  }
+}
